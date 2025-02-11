@@ -1,4 +1,4 @@
-
+from chatbot import response
 from flask import Flask, render_template, request
 app = Flask(__name__)
 app.static_folder = 'static'
@@ -8,6 +8,6 @@ def home():
 @app.route("/get")
 def get_bot_response():
     userText = request.args.get('msg')
-    return "Im sleeping now"
+    return response(userText)
 if __name__ == "__main__":
     app.run()
